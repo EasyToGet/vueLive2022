@@ -13,3 +13,6 @@
 - 12/16 每日任務 Day5：陣列操作 2、Bootstrap Utilities 1
   * dayWork5
 - 12/19 每日任務 Day6：陣列操作 3、Bootstrap Utilities 2
+  * dayWork6
+- 12/20 每日任務 Day7：加總技巧、Bootstrap 格線系統 1
+  * dayWork7
