@@ -10,3 +10,6 @@
   * dayWork3
 - 12/15 每日任務 Day4：陣列操作 1、Bootstrap font-size
   * dayWork4
+- 12/16 每日任務 Day5：陣列操作 2、Bootstrap Utilities 1
+  * dayWork5
+- 12/19 每日任務 Day6：陣列操作 3、Bootstrap Utilities 2
