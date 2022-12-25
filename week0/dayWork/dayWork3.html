@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">:
+  <title>12/13 每日任務 Day 2 - 物件取值、Bootstrap 表單 1</title>
+</head>
+
+<body>
+  <div class="container py-4">
+    <div class="row">
+      <form class="col-6 mx-auto">
+        <div class="row mb-3">
+          <label for="name" class="col-sm-2 col-form-label">名字</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="email" class="col-sm-2 col-form-label">信箱</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="city" class="col-sm-2 col-form-label">城市</label>
+          <div class="col-sm-10">
+            <select class="form-select" aria-label="Select city">
+              <option value="" selected disabled>請選擇你的居住城市</option>
+              <option value="高雄">高雄市</option>
+              <option value="台南">台南市</option>
+              <option value="台北">台北市</option>
+            </select>
+          </div>
+        </div>
+        <fieldset class="row mb-4">
+          <legend class="col-form-label col-sm-2 pt-0">性別</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sex" id="male" value="male" checked>
+              <label class="form-check-label" for="male">
+                男
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sex" id="female" value="female">
+              <label class="form-check-label" for="female">
+                女
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        <div class="mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="sub">
+            <label class="form-check-label" for="sub">
+              同意訂閱
+            </label>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary">送出</button>
+      </form>
+    </div>
+  </div>
+  <script src="./js/dayWork3.js"></script>
+</body>
+
+</html>
