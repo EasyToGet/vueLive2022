@@ -16,3 +16,5 @@
   * dayWork6
 - 12/20 每日任務 Day7：加總技巧、Bootstrap 格線系統 1
   * dayWork7
+- 12/21 每日任務 Day8：函式運用、Bootstrap 格線系統 2
+  * dayWork8
