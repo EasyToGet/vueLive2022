@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoCKata 練習</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <ul></ul>
+  </div>
+  <input type="text" id="inputByAdd">
+  <button type="button" id="buttonByAdd">新增</button>
+  <script>
+    // 資料
+    const data = [
+      {
+        id: 1,
+        content: '我是卡斯伯'
+      },
+      {
+        id: 2,
+        content: '我是小明'
+      }
+    ];
+
+    const app = document.querySelector('#app ul');
+    function render() {
+      let template = '';
+      data.forEach(item => {
+        template += `<li>${item.content} 
+          <button type="button" data-id="${item.id}" 
+          class="btnsByRemove">刪除</button></li>`;
+      })
+      app.innerHTML = template;
+
+      const btnsByRemove = document.querySelectorAll('.btnsByRemove');
+      btnsByRemove.forEach(btn => {
+        btn.addEventListener('click', function (evt) {
+          const id = Number.parseInt(evt.target.dataset.id);
+          removeItem(id);
+        });
+      })
+    }
+    
+    const btnByAdd = document.querySelector('#buttonByAdd');
+    const inputByAdd = document.querySelector('#inputByAdd');
+
+    btnByAdd.addEventListener('click', function () {
+      let value = inputByAdd.value;
+      inputByAdd.value = '';
+      addItem(value);
+    })
+
+    let num = data.length;
+    function addItem(content) {
+      num++;
+      data.push({
+        id: num,
+        content
+      });
+      render();
+    }
+
+
+    function removeItem(id) {
+      //  原生寫法
+      // let index = 0;
+      // data.forEach((item, i) => {
+      //   if(item.id === id) {
+      //     index = i;
+      //   }
+      // })
+
+      //  使用 findIndex
+      const index = data.findIndex(item => item.id === id);
+      data.splice(index, 1);
+      render();
+    }
+
+    render();
+  </script>
+</body>
+
+</html>
