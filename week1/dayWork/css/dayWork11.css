@@ -1,0 +1,7 @@
+.block {
+  border: 1px solid gray;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+  margin-bottom: 10px;
+  text-align: center;
+}

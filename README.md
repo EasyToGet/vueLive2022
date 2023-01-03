@@ -24,3 +24,5 @@
 - 第一週 - 主線任務: 從函式拆解認識設計模式
   * weekWork/SoCKata (關注點分離 Kata)
   * wekkWork/SoCDemo (JavaScript 必學語法, ESModule, 關注點分離)
+- 12/26 每日任務 Day11：物件傳參考
+  * dayWork/dayWork11
