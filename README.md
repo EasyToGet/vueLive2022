@@ -26,3 +26,5 @@
   * wekkWork/SoCDemo (JavaScript 必學語法, ESModule, 關注點分離)
 - 12/26 每日任務 Day11：物件傳參考
   * dayWork/dayWork11
+- 12/27 每日任務 Day12：程式錯誤發現
+  * dayWork/dayWork12
