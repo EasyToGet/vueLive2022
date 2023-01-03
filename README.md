@@ -28,3 +28,5 @@
   * dayWork/dayWork11
 - 12/27 每日任務 Day12：程式錯誤發現
   * dayWork/dayWork12
+- 12/28 每日任務 Day13：const 特性
+  * dayWork/dayWork13
