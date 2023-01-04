@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/dayWork17.css">
+  <title>01/03 每日任務 Day 17 - Vue 指令練習 v-bind</title>
+</head>
+
+<body>
+  <h1>01/03 每日任務 Day 17 - Vue 指令練習 v-bind</h1>
+  <div id="app">
+    <div class="container p-3">
+      <div class="inputWrap mb-3">
+        <input type="text" :value="imgUrl" class="imgInput mb-3">
+        <img v-bind:src="imgUrl" :alt="imgAlt">
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/dayWork17.js"></script>
+</body>
+
+</html>

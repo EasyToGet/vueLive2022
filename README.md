@@ -39,3 +39,5 @@
   * weekWork/RESTful_API
 - 01/02 每日任務 Day16：Vue 指令練習 1
   * dayWork/dayWork16
+- 01/03 每日任務 Day17：Vue 指令練習 v-bind
+  * dayWork/dayWork17
