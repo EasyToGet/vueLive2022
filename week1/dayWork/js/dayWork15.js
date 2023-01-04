@@ -30,13 +30,13 @@ let MingInfo = {
 console.log(MingInfo);
 
 /* (3) 請修改以下程式碼，透過 參數預設值、其餘參數 的方式完成此範例。 */
-function getMoney(money = 500) {
+function getMoney(money = 500) {  // 答案 money = 500
   return money;
 }
 let myMoney = getMoney();
 
 // fruits 是一個陣列
-function buySomething(...fruits) {
+function buySomething(...fruits) {  // 答案 ...fruits
   if (fruits.length > 2) {
     myMoney -= 200;
   } else {
