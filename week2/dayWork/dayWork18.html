@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/dayWork18.css">
+  <title>01/04 每日任務 Day 18 - Vue 指令練習 v-for, v-if</title>
+</head>
+
+<body>
+  <h1>01/04 每日任務 Day 18 - Vue 指令練習 v-for, v-if</h1>
+  <div id="app">
+    <div class="container p-3">
+      <h3>年紀大於 25 歲的同事</h3>
+      <ul>
+        <template v-for="collegue in collegueList" :key="collegue.name">
+          <li v-if="collegue.age > 25">
+            <p v-for="(value, key) in collegue" :key="value">屬性: {{ key }}，值: {{ value }}</p>
+          </li>
+        </template>
+      </ul>
+      <h3>年紀小於 25 歲的同事</h3>
+      <ul>
+        <template v-for="collegue in collegueList" :key="collegue.name">
+          <li v-if="collegue.age < 25">
+            <p v-for="(value, key) in collegue" :key="value">屬性: {{ key }}，值: {{ value }}</p>
+          </li>
+        </template>
+      </ul>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/dayWork18.js"></script>
+</body>
+
+</html>
