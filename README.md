@@ -32,3 +32,5 @@
   * dayWork/dayWork13
 - 12/29 每日任務 Day14：箭頭函式
   * dayWork/dayWork14
+- 12/30 每日任務 Day15：解構賦值和其餘運算子
+  * dayWork/dayWork15
