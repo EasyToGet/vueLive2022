@@ -34,3 +34,8 @@
   * dayWork/dayWork14
 - 12/30 每日任務 Day15：解構賦值和其餘運算子
   * dayWork/dayWork15
+## Week2 - RESTFUL API 串接
+- 第二週 - 主線任務: RESTful API 串接
+  * weekWork/RESTful_API
+- 01/02 每日任務 Day16：Vue 指令練習 1
+  * dayWork/dayWork16
