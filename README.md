@@ -30,3 +30,5 @@
   * dayWork/dayWork12
 - 12/28 每日任務 Day13：const 特性
   * dayWork/dayWork13
+- 12/29 每日任務 Day14：箭頭函式
+  * dayWork/dayWork14
