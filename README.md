@@ -43,3 +43,5 @@
   * dayWork/dayWork17
 - 01/04 每日任務 Day18：Vue 指令練習 v-for, v-if
   * dayWork/dayWork18
+- 01/05 每日任務 Day19：Vue 指令練習 2
+  * dayWork/dayWork19
