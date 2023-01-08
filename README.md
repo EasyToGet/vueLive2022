@@ -45,3 +45,4 @@
   * dayWork/dayWork18
 - 01/05 每日任務 Day19：Vue 指令練習 2
   * dayWork/dayWork19
+- 01/06 每日任務 Day20：Vue 指令練習 3
