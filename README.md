@@ -36,7 +36,8 @@
   * dayWork/dayWork15
 ## Week2 - RESTFUL API 串接
 - 第二週 - 主線任務: RESTful API 串接
-  * weekWork/RESTful_API
+  * weekWork/RESTful_API_admin
+  * weekWork/RESTful_API_login
 - 01/02 每日任務 Day16：Vue 指令練習 1
   * dayWork/dayWork16
 - 01/03 每日任務 Day17：Vue 指令練習 v-bind
