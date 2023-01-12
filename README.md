@@ -23,7 +23,7 @@
 ## Week1 - 重新打造 JAVASCRIPT 思維，從拆解認識設計模式
 - 第一週 - 主線任務: 從函式拆解認識設計模式
   * weekWork/SoCKata (關注點分離 Kata)
-  * wekkWork/SoCDemo (JavaScript 必學語法, ESModule, 關注點分離)
+  * weekWork/SoCDemo (JavaScript 必學語法, ESModule, 關注點分離)
 - 12/26 每日任務 Day11：物件傳參考
   * dayWork/dayWork11
 - 12/27 每日任務 Day12：程式錯誤發現
@@ -54,3 +54,5 @@
   * weekWork/VueJsAPI_admin
 - 01/09 每日任務 Day21：createApp
   * dayWork/dayWork21
+- 01/10 每日任務 Day22：:class 運用
+  * dayWork/dayWork22
