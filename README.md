@@ -56,3 +56,5 @@
   * dayWork/dayWork21
 - 01/10 每日任務 Day22：:class 運用
   * dayWork/dayWork22
+- 01/11 每日任務 Day23：修飾符
+  * dayWork/dayWork23

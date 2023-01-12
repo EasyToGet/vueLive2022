@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/dayWork23.css">
+  <title>01/11 每日任務 Day 23 - 修飾符</title>
+</head>
+
+<body>
+  <h1>01/11 每日任務 Day 23 - 修飾符</h1>
+  <div id="app">
+    <div class="container mt-3">
+      <!--  確保不會切換到其他網址  -->
+      <h3>Q1</h3>
+      <form @submit.prevent="onSubmit" class="mb-3">
+        <button>送出表單</button>
+      </form>
+      <!--  只會輸出 console.log 一次 -->
+      <h3>Q2</h3>
+      <button @click.once="executeOnce" class="mb-3">點擊按鈕</button>
+      <!--  只有按下 enter 時會輸出 text 的內容  -->
+      <h3>Q3</h3>
+      <input type="text" v-model="text" @keyup.enter="onEnter">
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/dayWork23.js"></script>
+</body>
+
+</html>
