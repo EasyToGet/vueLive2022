@@ -58,3 +58,5 @@
   * dayWork/dayWork22
 - 01/11 每日任務 Day23：修飾符
   * dayWork/dayWork23
+- 01/12 每日任務 Day24：v-else-if
+  * dayWork/dayWork24
