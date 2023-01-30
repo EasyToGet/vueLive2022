@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/dayWork25.css">
+  <title>01/13 每日任務 Day 25 - input 型別</title>
+</head>
+
+<body>
+  <h1>01/13 每日任務 Day 25 - input 型別</h1>
+  <div id="app" class="p-3">
+    <!-- 請確保 num 的型別為 'number' -->
+    <!-- <input type="number" v-model="num"> -->
+    <input type="number" v-model.number="num">
+    {{ typeof num }}
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/dayWork25.js"></script>
+</body>
+
+</html>

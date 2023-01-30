@@ -60,3 +60,5 @@
   * dayWork/dayWork23
 - 01/12 每日任務 Day24：v-else-if
   * dayWork/dayWork24
+- 01/13 每日任務 Day25：input 型別
+  * dayWork/dayWork25
