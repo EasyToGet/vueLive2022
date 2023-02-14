@@ -45,8 +45,7 @@
                   {{ product.price }}
                 </td>
                 <td width="150">
-                  <span v-if="product.is_enabled" class="text-success">啟用</span>
-                  <span v-else>未啟用</span>
+                  <span class="text-success">{{ product.is_enabled ? '啟用' : '未啟用' }}</span>
                 </td>
                 <td width="120">
                   <button type="button" class="btn btn-primary" @click="openProduct(product)">查看細節</button>
@@ -79,7 +78,7 @@
               <img :src="productsOther" :alt="productsTemp.title" class="images m-2">
             </template>
           </template>
-          <p class="text-secondary">請選擇一個商品查看</p>
+          <p v-else class="text-secondary">請選擇一個商品查看</p>
         </div>
       </div>
     </div>
