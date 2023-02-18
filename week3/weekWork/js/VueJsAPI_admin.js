@@ -13,30 +13,29 @@ const app = Vue.createApp({
         imagesUrl: [],
       },
       isNew: false, // 確認是新增或編輯所使用
-    }
+    };
   },
   methods: {
     checkAdmin() {
       const apiUrl = `${site}v2/api/user/check`;
       axios.post(apiUrl)
-        .then(() => {
+        .then(res => {
           this.getProducts();
         })
         .catch(err => {
-          alert(err.data.message);
+          alert("登入失敗");
           window.location = 'VueJsAPI_login.html';
-        })
+        });
     },
     getProducts() {
       const apiUrl = `${site}v2/api/${apiPath}/admin/products/all`;
       axios.get(apiUrl)
         .then(res => {
-          console.log(res);
           this.products = res.data.products;
         })
         .catch(err => {
           console.log(err.data.message);
-        })
+        });
     },
     openModal(status, product) {
       if (status === 'new') {
@@ -45,7 +44,7 @@ const app = Vue.createApp({
         //  帶入初始化資料
         this.tempProduct = {
           imagesUrl: [],
-        }
+        };
       } else if (status === 'edit') {
         productModal.show();
         this.isNew = false;
@@ -55,8 +54,7 @@ const app = Vue.createApp({
         delProductModal.show();
         //  帶入當前要刪除的資料
         this.tempProduct = { ...product };
-      }
-
+      };
     },
     updateProduct() {
       let apiUrl = `${site}v2/api/${apiPath}/admin/product`;
@@ -65,7 +63,7 @@ const app = Vue.createApp({
       if (!this.isNew) {
         apiUrl = `${site}v2/api/${apiPath}/admin/product/${this.tempProduct.id}`;
         method = 'put';
-      }
+      };
 
       axios[method](apiUrl, { data: this.tempProduct })
         .then(res => {
@@ -74,7 +72,7 @@ const app = Vue.createApp({
         })
         .catch(err => {
           console.log(err.data.message);
-        })
+        });
     },
     delProduct() {
       const apiUrl = `${site}v2/api/${apiPath}/admin/product/${this.tempProduct.id}`;
@@ -85,7 +83,7 @@ const app = Vue.createApp({
         })
         .catch(err => {
           console.log(err.data.message);
-        })
+        });
     },
     createImages() {
       this.tempProduct.imagesUrl = [];
