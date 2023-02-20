@@ -59,39 +59,6 @@ const app = Vue.createApp({
         //  帶入當前要刪除的資料
         this.tempProduct = { ...product };
       };
-    },
-    updateProduct() {
-      let apiUrl = `${site}v2/api/${apiPath}/admin/product`;
-      let method = 'post';
-      //  用 isNew 判斷 API 怎麼運行
-      if (!this.isNew) {
-        apiUrl = `${site}v2/api/${apiPath}/admin/product/${this.tempProduct.id}`;
-        method = 'put';
-      };
-
-      axios[method](apiUrl, { data: this.tempProduct })
-        .then(res => {
-          this.getProducts();
-          productModal.hide();
-        })
-        .catch(err => {
-          console.log(err.data.message);
-        });
-    },
-    delProduct() {
-      const apiUrl = `${site}v2/api/${apiPath}/admin/product/${this.tempProduct.id}`;
-      axios.delete(apiUrl)
-        .then((res) => {
-          this.getProducts();
-          delProductModal.hide();
-        })
-        .catch(err => {
-          console.log(err.data.message);
-        });
-    },
-    createImages() {
-      this.tempProduct.imagesUrl = [];
-      this.tempProduct.imagesUrl.push('');
     }
   },
   components: {
@@ -107,6 +74,53 @@ const app = Vue.createApp({
     // bootstrap 方法
     productModal = new bootstrap.Modal('#productModal');
     delProductModal = new bootstrap.Modal('#delProductModal');
+  },
+});
+
+app.component('productModal', {
+  props: ['tempProduct', 'isNew'],
+  template: '#product-modal-template',
+  methods: {
+    updateProduct() {
+      let apiUrl = `${site}v2/api/${apiPath}/admin/product`;
+      let method = 'post';
+      //  用 isNew 判斷 API 怎麼運行
+      if (!this.isNew) {
+        apiUrl = `${site}v2/api/${apiPath}/admin/product/${this.tempProduct.id}`;
+        method = 'put';
+      };
+
+      axios[method](apiUrl, { data: this.tempProduct })
+        .then(res => {
+          this.$emit('updateProduct');
+          productModal.hide();
+        })
+        .catch(err => {
+          console.log(err.response.data.message);
+        });
+    },
+    createImages() {
+      this.tempProduct.imagesUrl = [];
+      this.tempProduct.imagesUrl.push('');
+    }
+  },
+});
+
+app.component('del-product-modal', {
+  props: ['tempProduct'],
+  template: '#del-product-modal-template',
+  methods: {
+    delProduct() {
+      const apiUrl = `${site}v2/api/${apiPath}/admin/product/${this.tempProduct.id}`;
+      axios.delete(apiUrl)
+        .then((res) => {
+          this.$emit('delProduct');
+          delProductModal.hide();
+        })
+        .catch(err => {
+          console.log(err.data.message);
+        });
+    }
   },
 });
 
