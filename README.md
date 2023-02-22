@@ -64,5 +64,10 @@
   * dayWork/dayWork25
 ## Week4 - 元件化
 第四週 - 元件化
+  Import Component 版本
   * weekWork/VueJsComponent_login
   * weekWork/VueJsComponent_admin
+  * weekWork/components/pagination, productModal, delProductModal (元件)
+  x-template 版本
+  * weekWork/VueJsComponent_login_x_template
+  * weekWork/VueJsComponent_admin_x_template

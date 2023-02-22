@@ -6,7 +6,7 @@ export default {
       <li class="page-item"
         :class="{ disabled: !pages.has_pre }">
         <a class="page-link" href="#" aria-label="Previous"
-          @click.prevent="$emit('change-page', pages.current_page - 1)">
+          @click.prevent="changePages(pages.current_page - 1)">
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
@@ -14,16 +14,21 @@ export default {
         :class="{ active: page === pages.current_page }"
         v-for="(page, key) in pages.total_pages" :key="key">
         <a class="page-link" href="#"
-        @click.prevent="$emit('change-page', page)">{{ page }}</a></li>
+        @click.prevent="changePages(page)">{{ page }}</a></li>
       <li class="page-item"
         :class="{ disabled: !pages.has_next }">
         <a class="page-link" href="#" aria-label="Next"
-          @click.prevent="$emit('change-page', pages.current_page + 1)">
+          @click.prevent="changePages(pages.current_page + 1)">
           <span aria-hidden="true">&raquo;</span>
         </a>
       </li>
     </ul>
-  </nav>`
+  </nav>`,
+  methods: {
+    changePages(page) {
+      this.$emit('change-page', page);
+    }
+  }
 };
 
 // 用 methods 撰寫方式

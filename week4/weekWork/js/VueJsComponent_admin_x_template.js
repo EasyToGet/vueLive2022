@@ -1,7 +1,3 @@
-import pagination from '../components/pagination.js';
-import updateProductModal from '../components/productModal.js';
-import deleteProductModal from '../components/delProductModal.js';
-
 const site = 'https://vue3-course-api.hexschool.io/';
 const apiPath = 'edvuelive2023';
 
@@ -29,7 +25,7 @@ const app = Vue.createApp({
         })
         .catch(err => {
           alert("登入失敗");
-          window.location = 'VueJsComponent_login.html';
+          window.location = 'VueJsComponent_login_x_template.html';
         });
     },
     getProducts(page = 1) {
@@ -42,29 +38,6 @@ const app = Vue.createApp({
         .catch(err => {
           console.log(err.data.message);
         });
-    },
-    updateProduct() {
-      let apiUrl = `${site}v2/api/${apiPath}/admin/product`;
-      let method = 'post';
-      //  用 isNew 判斷 API 怎麼運行
-      if (!this.isNew) {
-        apiUrl = `${site}v2/api/${apiPath}/admin/product/${this.tempProduct.id}`;
-        method = 'put';
-      };
-
-      axios[method](apiUrl, { data: this.tempProduct })
-        .then(res => {
-          this.getProducts();
-          productModal.hide();
-          alert(res.data.message);
-        })
-        .catch(err => {
-          console.log(err.response.data.message);
-        });
-    },
-    createImages() {
-      this.tempProduct.imagesUrl = [];
-      this.tempProduct.imagesUrl.push('');
     },
     openModal(status, product) {
       if (status === 'new') {
@@ -87,9 +60,7 @@ const app = Vue.createApp({
     }
   },
   components: {
-    pagination,
-    updateProductModal,
-    deleteProductModal,
+    
   },
   mounted() {
     // 取出 Token
@@ -101,6 +72,58 @@ const app = Vue.createApp({
     // bootstrap 方法
     productModal = new bootstrap.Modal('#productModal');
     delProductModal = new bootstrap.Modal('#delProductModal');
+  },
+});
+
+app.component('pagination', {
+  props: ['pages', 'getProducts'],
+  template: '#pagination'
+});
+
+app.component('productModal', {
+  props: ['tempProduct', 'isNew'],
+  template: '#product-modal-template',
+  methods: {
+    updateProduct() {
+      let apiUrl = `${site}v2/api/${apiPath}/admin/product`;
+      let method = 'post';
+      //  用 isNew 判斷 API 怎麼運行
+      if (!this.isNew) {
+        apiUrl = `${site}v2/api/${apiPath}/admin/product/${this.tempProduct.id}`;
+        method = 'put';
+      };
+
+      axios[method](apiUrl, { data: this.tempProduct })
+        .then(res => {
+          this.$emit('updateProduct');
+          productModal.hide();
+        })
+        .catch(err => {
+          console.log(err.response.data.message);
+        });
+    },
+    createImages() {
+      this.tempProduct.imagesUrl = [];
+      this.tempProduct.imagesUrl.push('');
+    }
+  },
+});
+
+app.component('del-product-modal', {
+  props: ['tempProduct'],
+  template: '#del-product-modal-template',
+  methods: {
+    delProduct() {
+      const apiUrl = `${site}v2/api/${apiPath}/admin/product/${this.tempProduct.id}`;
+      axios.delete(apiUrl)
+        .then((res) => {
+          this.$emit('delProduct');
+          delProductModal.hide();
+        })
+        .catch(err => {
+          console.log(err.data.message);
+        });
+    }
   },
 });
 
