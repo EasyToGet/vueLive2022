@@ -73,3 +73,5 @@
   * weekWork/VueJsComponent_admin_x_template
 - 01/30 每日任務 Day26：Pinia - 建立 store
   * dayWork/dayWork26
+- 01/31 每日任務 Day27：Pinia - 將 store 內資料渲染到畫面上
+  * dayWork/dayWork27
