@@ -64,13 +64,13 @@
   * dayWork/dayWork25
 ## Week4 - 元件化
 - 第四週 - 元件化
-  Import Component 版本
-  * weekWork/VueJsComponent_login
-  * weekWork/VueJsComponent_admin
-  * weekWork/components/pagination, productModal, delProductModal (元件)
-  x-template 版本
-  * weekWork/VueJsComponent_login_x_template
-  * weekWork/VueJsComponent_admin_x_template
+  - Import Component 版本
+    * weekWork/VueJsComponent_login
+    * weekWork/VueJsComponent_admin
+    * weekWork/components/pagination, productModal, delProductModal (元件)
+  - x-template 版本
+    * weekWork/VueJsComponent_login_x_template
+    * weekWork/VueJsComponent_admin_x_template
 - 01/30 每日任務 Day26：Pinia - 建立 store
   * dayWork/dayWork26
 - 01/31 每日任務 Day27：Pinia - 將 store 內資料渲染到畫面上
