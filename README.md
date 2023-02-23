@@ -75,3 +75,5 @@
   * dayWork/dayWork26
 - 01/31 每日任務 Day27：Pinia - 將 store 內資料渲染到畫面上
   * dayWork/dayWork27
+- 02/01 每日任務 Day28：Pinia - 在元件運用 store 內方法
+  * dayWork/dayWork28
