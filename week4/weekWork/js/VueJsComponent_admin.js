@@ -6,7 +6,6 @@ const site = 'https://vue3-course-api.hexschool.io/';
 const apiPath = 'edvuelive2023';
 
 let productModal = {};
-let delProductModal = {};
 
 const app = Vue.createApp({
   // 產品資料格式
@@ -28,7 +27,7 @@ const app = Vue.createApp({
           this.getProducts();
         })
         .catch(err => {
-          alert("登入失敗");
+          alert("驗證失敗");
           window.location = 'VueJsComponent_login.html';
         });
     },
@@ -40,7 +39,7 @@ const app = Vue.createApp({
           this.page = res.data.pagination;
         })
         .catch(err => {
-          console.log(err.data.message);
+          console.log(err.response.data.message);
         });
     },
     updateProduct() {
@@ -59,7 +58,8 @@ const app = Vue.createApp({
           alert(res.data.message);
         })
         .catch(err => {
-          console.log(err.response.data.message);
+          alert(err.response.data.message);
+          // console.log(err.response.data.message);
         });
     },
     createImages() {
@@ -80,7 +80,8 @@ const app = Vue.createApp({
         //  帶入當前要編輯的資料
         this.tempProduct = { ...product };
       } else if (status === 'delete') {
-        delProductModal.show();
+        // 這裡是從 delProductModal.js 用 $refs 來啟用 openModal()
+        this.$refs.delProductModal.openModal();   
         //  帶入當前要刪除的資料
         this.tempProduct = { ...product };
       };
@@ -99,8 +100,7 @@ const app = Vue.createApp({
     this.checkAdmin();
 
     // bootstrap 方法
-    productModal = new bootstrap.Modal('#productModal');
-    delProductModal = new bootstrap.Modal('#delProductModal');
+    productModal = new bootstrap.Modal('#productModal');  //  Modal 寫在本 JS 上面
   },
 });
 

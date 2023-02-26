@@ -1,5 +1,5 @@
 export default {
-  props: ['tempProduct'],
+  props: ['tempProduct',],
   template: `<div id="delProductModal" ref="delProductModal" class="modal fade" tabindex="-1"
       aria-labelledby="delProductModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -29,7 +29,7 @@ export default {
     return {
       site: 'https://vue3-course-api.hexschool.io/',
       apiPath: 'edvuelive2023',
-      delProductModal: '',
+      delProductModal: {},
     };
     
   },
@@ -54,11 +54,10 @@ export default {
     },
   },
   mounted() {
-    this.delProductModal = new bootstrap.Modal(document.getElementById('delProductModal'), {
+    this.delProductModal = new bootstrap.Modal(this.$refs.delProductModal, {
       keyboard: false,
       backdrop: 'static',
     });
-    console.log(this.delProductModal);
   },
 };
 

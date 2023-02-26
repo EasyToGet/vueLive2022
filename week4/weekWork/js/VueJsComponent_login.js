@@ -21,7 +21,8 @@ const app = Vue.createApp({
           document.cookie = `hexToken=${token}; expires=${new Date(expired)}; path=/`;
           window.location = 'VueJsComponent_admin.html'
         }).catch(error => {
-          console.log(error.data.message);
+          alert(error.response.data.message);
+          // console.log(error.response.data.message);
         })
     }
   },
