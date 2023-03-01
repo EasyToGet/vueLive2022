@@ -77,3 +77,6 @@
   * dayWork/dayWork27
 - 02/01 每日任務 Day28：Pinia - 在元件運用 store 內方法
   * dayWork/dayWork28
+## Week5 - 進階語法介紹
+- 第五週 - 進階語法介紹
+  * weekWork/VueCartAPI
