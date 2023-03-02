@@ -80,3 +80,6 @@
 ## Week5 - 進階語法介紹
 - 第五週 - 進階語法介紹
   * weekWork/VueCartAPI
+## Week6 - VITE、VUE ROUTER
+- 第六週 - Vite、Vue Router
+  * weekWork/ViteVueRouterDemo
