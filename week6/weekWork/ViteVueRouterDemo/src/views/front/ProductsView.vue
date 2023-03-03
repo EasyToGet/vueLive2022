@@ -16,7 +16,7 @@
             <div
               style="height: 100px;
               background-size: cover;
-              background-position: center;"
+              background-position: cent;"
               :style="{ backgroundImage: `url(${product.imageUrl})` }">
             </div>
           </td>
@@ -106,10 +106,10 @@ export default {
         })
     },
     addToCart (id, qty = 1) {
-      const url = `${VITE_APP_URL}/v2/api/$${VITE_APP_PATH}/cart`
+      const url = `${VITE_APP_URL}/v2/api/${VITE_APP_PATH}/cart`
       this.loadingStatus.loadingItem = id.id
       const data = {
-        id,
+        product_id: id,
         qty
       }
       this.$refs.userProductModal.hideModal()
