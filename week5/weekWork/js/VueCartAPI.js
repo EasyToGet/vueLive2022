@@ -80,6 +80,7 @@ const app = Vue.createApp({
         .then(res => {
           alert(res.data.message);
           this.loadingStatus.loadingItem = '';
+          this.$refs.userProductModal.qty = 1;
           this.getCart();
         })
         .catch(err => {
