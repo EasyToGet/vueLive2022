@@ -1,51 +1,41 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+#!/usr/bin/env sh
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ['main']
+# abort on errors
+set -e
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+# build
+npm run build
 
-# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+# navigate into the build output directory
+cd dist
 
-# Allow one concurrent deployment
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
+# place .nojekyll to bypass Jekyll processing
+echo > .nojekyll
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload dist repository
-          path: './dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+# if you are deploying to a custom domain
+# echo 'www.example.com' > CNAME
+
+git init
+git checkout -B main
+git add -A
+git commit -m 'deploy'
+
+
+# 如果第一次執行 sh deploy.sh
+# 推 git push -f git@github.com:EasyToGet/vueLive2022.git main:gh-pages 
+# 推不上 github
+# 改用 git push -f https://github.com/EasyToGet/vueLive2022.git main:gh-pages
+# 並再隨意程式檔更動程式碼，再執行一次 sh deploy.sh 就可以了
+
+# if you are deploying to https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
+
+# https://github.com/EasyToGet/vueLive2022.git
+# if you are deploying to https://<USERNAME>.github.io/<REPO>
+# git push -f git@github.com:EasyToGet/vueLive2022.git main:gh-pages
+git push -f https://github.com/EasyToGet/vueLive2022.git main:gh-pages
+
+
+cd -
+
+
