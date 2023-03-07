@@ -99,6 +99,7 @@ export default {
         .then(res => {
           this.loadingStatus.loadingItem = ''
           this.product = res.data.product
+          console.log(res.data.product)
           this.$refs.userProductModal.openModal()
         })
         .catch(err => {
@@ -117,6 +118,7 @@ export default {
         .then(res => {
           alert(res.data.message)
           this.loadingStatus.loadingItem = ''
+          this.$refs.userProductModal.qty = 1
           this.$refs.userProductModal.hideModal()
         })
         .catch(err => {

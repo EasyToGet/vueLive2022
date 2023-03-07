@@ -11,7 +11,8 @@ export default defineConfig({
       include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue']
     })
   ],
-  base: '/ViteVueRouterDemo/',
+  // base 設定 gh-page 預設路徑
+  base: '/week6/weekWork/ViteVueRouterDemo',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

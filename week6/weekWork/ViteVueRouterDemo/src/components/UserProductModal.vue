@@ -52,8 +52,8 @@
                     v-model.number="qty">
                     <option
                       :value="i"
-                      v-for="(i, key) in 20"
-                      :key="key"
+                      v-for="i in 20"
+                      :key="i"
                     >
                       {{ i }}
                     </option>
